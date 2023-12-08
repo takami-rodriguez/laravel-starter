@@ -7,6 +7,12 @@
     "require": {
         "php": "^8.1",
         "ext-bcmath": "*",
+        "ext-ctype": "*",
+        "ext-curl": "*",
+        "ext-dom": "*",
+        "ext-hash": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
         "arcanedev/log-viewer": "^10.0",
         "guzzlehttp/guzzle": "^7.5",
         "hashids/hashids": "^5.0",
