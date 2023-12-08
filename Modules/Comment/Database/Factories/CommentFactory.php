@@ -23,13 +23,13 @@ class CommentFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->sentence(2),
+            'name' => $this->faker->text('25'),
             'slug' => '',
-            'comment' => $this->faker->paragraph,
+            'comment' => $this->faker->realText(200,2),
             'user_id' => $this->faker->numberBetween(1, 4),
             'commentable_id' => $this->faker->numberBetween(1, 25),
             'commentable_type' => 'Modules\Article\Models\Post',
-            'status' => $this->faker->randomElement([0, 1]),
+            'status' => 1,
             'moderated_by' => $this->faker->numberBetween(1, 2),
             'moderated_at' => Carbon::now(),
             'published_at' => Carbon::now(),

@@ -68,7 +68,7 @@ class InsertDemoData extends Command
          * Comments.
          */
         $this->info('Inserting Comments');
-        Comment::factory()->count(25)->create();
+        Comment::factory()->count(125)->create();
 
         $this->newLine(2);
         $this->info('-- Completed --');

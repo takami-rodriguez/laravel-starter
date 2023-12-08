@@ -23,9 +23,9 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'name' => substr($this->faker->text(30), 0, -1),
+            'name' => $this->faker->catchPhrase(),
             'slug' => '',
-            'intro' => $this->faker->paragraph,
+            'intro' => $this->faker->realText($maxNbChars = 150, $indexSize = 2),
             'content' => $this->faker->paragraphs(rand(5, 7), true),
             'type' => $this->faker->randomElement(['Article', 'Blog', 'News']),
             'is_featured' => $this->faker->randomElement([1, 0]),
