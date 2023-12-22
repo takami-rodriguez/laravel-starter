@@ -86,7 +86,8 @@ class PostsController extends Controller
 
         $module_action = 'List';
 
-        $$module_name = $module_model::select('id', 'name', 'category_name', 'status', 'updated_at', 'published_at', 'is_featured');
+        $$module_name = $module_model::select('id', 'name', 'category_name', 'status', 'updated_at', 'published_at', 'is_featured')
+            ->withCount('tags');
 
         $data = $$module_name;
 
@@ -112,7 +113,10 @@ class PostsController extends Controller
 
                 return $data->updated_at->isoFormat('LLLL');
             })
-            ->rawColumns(['name', 'status', 'action'])
+            ->editColumn('tags', function ($data) {
+                return $data->tags_count;
+            })
+            ->rawColumns(['tags', 'name', 'status', 'action'])
             ->orderColumns(['id'], '-:column $1')
             ->make(true);
     }

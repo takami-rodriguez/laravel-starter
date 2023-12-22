@@ -54,8 +54,12 @@
                             <th>
                                 Name
                             </th>
+
                             <th>
                                 Categoty
+                            </th>
+                            <th>
+                                Tags Number
                             </th>
                             <th class="text-end">
                                 Action
@@ -109,9 +113,14 @@
                 data: 'name',
                 name: 'name'
             },
+
             {
                 data: 'category_name',
                 name: 'category_name'
+            },
+            {
+                data: 'tags',
+                name: '#tags'
             },
             {
                 data: 'action',
