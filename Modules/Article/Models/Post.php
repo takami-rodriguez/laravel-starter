@@ -179,6 +179,14 @@ class Post extends BaseModel
             ->orderBy('published_at', 'desc');
     }
 
+    public function scopeGetTags($query,$limit=0){
+        if($limit = 0){
+            return $query;
+        }else{
+            return $query->limit($limit);
+        }
+    }
+
     /**
      * Create a new factory instance for the model.
      *
